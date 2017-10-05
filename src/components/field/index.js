@@ -392,7 +392,7 @@ export default class TextField extends PureComponent {
 
     let errorStyle = {
       color: errorColor,
-
+      alignSelf: 'flex-start',
       opacity: focus.interpolate({
         inputRange: [-1, 0, 1],
         outputRange: [1, 0, 0],
@@ -502,8 +502,8 @@ export default class TextField extends PureComponent {
 
         <Animated.View style={helperContainerStyle}>
           <View style={styles.flex}>
-            <Helper style={[errorStyle, titleTextStyle]}>{error}</Helper>
-            <Helper style={[titleStyle, titleTextStyle]}>{title}</Helper>
+            <Helper style={errorStyle}>{error}</Helper>
+            <Helper style={titleStyle}>{title}</Helper>
           </View>
 
           <Counter {...counterProps} />
